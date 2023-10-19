@@ -2,11 +2,13 @@ name: Build and deploy .NET Core application to Web App fisorchard
 on:
   push:
     branches:
-    - master
+    - development
+  workflow_dispatch:
+  
 env:
   AZURE_WEBAPP_NAME: fisorchard
   AZURE_WEBAPP_PACKAGE_PATH: .\published
-  CONFIGURATION: Release
+  CONFIGURATION: debug
   DOTNET_CORE_VERSION: 7.0.x
   WORKING_DIRECTORY: .
   AZURE_WEBAPP_SLOT_NAME: development
