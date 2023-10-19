@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="@Orchard.CultureName()">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@RenderTitleSegments(Site.SiteName, "before")</title>
+
+    <link type="image/x-icon" rel="shortcut icon" href="~/DemoTwo/favicon.ico">
+      
+    <style asp-src="~/DemoTwo/assets/css/vendor/bootstrap/css/bootstrap.min.css"></style>
+    <style asp-src="~/DemoTwo/assets/css/vendor/bootstrap-icons/bootstrap-icons.css"></style>
+    <style asp-src="~/DemoTwo/assets/css/vendor/aos/aos.css"></style>
+    <style asp-src="~/DemoTwo/assets/css/vendor/glightbox/css/glightbox.min.css"></style>
+    <style asp-src="~/DemoTwo/assets/css/vendor/swiper/swiper-bundle.min.css"></style>
+    <style asp-src="~/DemoTwo/assets/css/variables.css"></style>
+    <style asp-src="~/DemoTwo/assets/css/main.css"></style>
+
+
+
+
+    <script asp-src="~/DemoTwo/assets/css/vendor/bootstrap/js/bootstrap.bundle.min.js" version="5" at="Foot"></script>
+    <script asp-src="~/DemoTwo/assets/css/vendor/aos/aos.js" version="5" at="Foot"></script>
+    <script asp-src="~/DemoTwo/assets/css/vendor/glightbox/js/glightbox.min.js" version="5" at="Foot"></script>
+    <script asp-src="~/DemoTwo/assets/css/vendor/isotope-layout/isotope.pkgd.min.js" version="5" at="Foot"></script>
+    <script asp-src="~/DemoTwo/assets/css/vendor/swiper/swiper-bundle.min.js" version="5" at="Foot"></script>
+    <script asp-src="~/DemoTwo/assets/css/vendor/php-email-form/validate.js" version="5" at="Foot"></script>
+    <script asp-src="~/DemoTwo/assets/js/main.js" at="Foot"></script>
+
+    <resources type="Meta" />
+    <resources type="HeadLink" />
+    <resources type="Stylesheet" />
+    <resources type="HeadScript" />
+
+    @await RenderSectionAsync("HeadMeta", required: false)
+
+</head>
+<body>
+    <header id="header" class="header fixed-top" data-scrollto-offset="0">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+
+            <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1>@Site.SiteName<span>.</span></h1>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <menu alias="alias:navigation" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:navigation" />
+                <i class="bi bi-list mobile-nav-toggle d-none"></i>
+            </nav><!-- .navbar -->
+
+            <a class="btn-getstarted scrollto" href="/blog">Blog</a>
+
+        </div>
+    </header>
+
+    @await RenderBodyAsync()
+
+    <footer id="footer" class="footer">
+        @await RenderSectionAsync("Footer", required: false)
+    </footer>
+
+    <resources type="FootScript" />
+</body>
+</html>

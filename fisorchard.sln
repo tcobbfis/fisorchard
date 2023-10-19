@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cms", "CMS\cms.csproj", "{E43F45AC-1A10-4863-97A3-DA58059FEE4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThemeOne", "ThemeOne\ThemeOne.csproj", "{EF55C438-4D57-404F-AB00-CEFDC8024FFB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoTwo", "DemoTwo\DemoTwo.csproj", "{90D46A4E-F21C-4DAB-A7E4-5D03B82E4B71}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrchardCoreContrib.Email.Azure", "OrchardCoreContrib.Email.Azure\OrchardCoreContrib.Email.Azure.csproj", "{25BE741B-507B-4844-8524-F989B7A6842A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E43F45AC-1A10-4863-97A3-DA58059FEE4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E43F45AC-1A10-4863-97A3-DA58059FEE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E43F45AC-1A10-4863-97A3-DA58059FEE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E43F45AC-1A10-4863-97A3-DA58059FEE4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF55C438-4D57-404F-AB00-CEFDC8024FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF55C438-4D57-404F-AB00-CEFDC8024FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF55C438-4D57-404F-AB00-CEFDC8024FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF55C438-4D57-404F-AB00-CEFDC8024FFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90D46A4E-F21C-4DAB-A7E4-5D03B82E4B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D46A4E-F21C-4DAB-A7E4-5D03B82E4B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D46A4E-F21C-4DAB-A7E4-5D03B82E4B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D46A4E-F21C-4DAB-A7E4-5D03B82E4B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25BE741B-507B-4844-8524-F989B7A6842A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25BE741B-507B-4844-8524-F989B7A6842A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25BE741B-507B-4844-8524-F989B7A6842A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25BE741B-507B-4844-8524-F989B7A6842A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B295ECFE-5F42-4F9F-BC3B-9C5A47E81F5C}
+	EndGlobalSection
+EndGlobal

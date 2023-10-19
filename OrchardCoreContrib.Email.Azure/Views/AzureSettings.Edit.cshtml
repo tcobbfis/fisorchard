@@ -1,0 +1,40 @@
+@using OrchardCoreContrib.Email.Azure;
+@model AzureSettings
+
+
+<div class="mb-4" id="@Html.Id("DeliveryMethodOptions")">
+    <div id="@Html.Id("NetworkOptions")" data-bs-parent="#@Html.Id("DeliveryMethodOptions")">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">@T["Network delivery options"]</h2>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="d-flex flex-wrap align-items-center justify-content-stretch">
+                            <div class="mb-3 flex-fill" asp-validation-class-for="ConnectionString">
+                                <label asp-for="ConnectionString">@T["Connection string"]</label>
+                                <input asp-for="ConnectionString" class="form-control" type="text" />
+                                <span asp-validation-for="ConnectionString"></span>
+                                <span class="hint">@T["connection string from azure"]</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex flex-wrap align-items-center justify-content-stretch">
+                            <div class="mb-3 flex-fill" asp-validation-class-for="Recipient">
+                                <label asp-for="Recipient">@T["Recipient"]</label>
+                                <input asp-for="Recipient" class="form-control" type="text"/>
+                                <span asp-validation-for="Recipient"></span>
+                                <span class="hint">@T["test email recipient"]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,10 @@
+﻿<section id="hero-animated" class="hero-animated d-flex align-items-center">
+    <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
+        <img src="@Orchard.AssetUrl((string)Model.Banner.Image.Paths[0])" class="img-fluid animated">
+        <h3>@Model.Banner.Heading.Text</h3>
+        <p>@Model.Banner.Content.Text</p>
+        <div class="d-flex">
+            <a href="@Model.Banner.Link.Url" class="btn-get-started scrollto">@Model.Banner.Link.Text</a>
+        </div>
+    </div>
+</section>

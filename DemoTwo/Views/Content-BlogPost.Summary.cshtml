@@ -1,0 +1,35 @@
+﻿@{
+    string type = Model.Type.ToString().ToLowerInvariant();
+}
+
+
+<div class="col-lg-4">
+    <article class="d-flex flex-column">
+
+        <div class="post-img">
+            <img src="@Orchard.AssetUrl((string)Model.ContentItem.Content.BlogPost.Image.Paths[0])" class="img-fluid">
+        </div>
+
+        <h2 class="title">
+            <a href="blog-details.html">@Model.ContentItem.Content.BlogPost.Subtitle.Text</a>
+        </h2>
+
+        <div class="meta-top">
+            <ul>
+                <li class="d-flex align-items-center"><i class="bi bi-person"></i> @Model.ContentItem.Author</li>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="@Model.ContentItem.CreatedUtc">@Model.ContentItem.CreatedUtc</time></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <p>
+                @Model.ContentItem.Content.MarkdownBodyPart.Markdown
+            </p>
+        </div>
+
+        <div class="read-more mt-auto align-self-end">
+            <a href="@Model.ContentItem.Content.AutoroutePart.Path">Read More</a>
+        </div>
+
+    </article>
+</div>
