@@ -48,7 +48,6 @@ namespace OrchardCoreContrib.Email.Azure.Drivers
                 Initialize<AzureSettings>("AzureSettings_Edit", model =>
                 {
                     model.DefaultSender = settings.DefaultSender;
-                    model.Recipient = settings.Recipient;
                     model.ConnectionString = settings.ConnectionString;
 
                 }).Location("Content:4").OnGroup(GroupId),

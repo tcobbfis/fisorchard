@@ -21,12 +21,6 @@ namespace OrchardCoreContrib.Email.Azure
         /// <summary>
         /// Gets or sets the default sender mail.
         /// </summary>
-        [Required(AllowEmptyStrings = false), EmailAddress]
-        public string Recipient { get; set; }
-
-        /// <summary>
-        /// Gets or sets the default sender mail.
-        /// </summary>
         [Required(AllowEmptyStrings = false)]
         public string ConnectionString { get; set; }
 
@@ -39,11 +33,6 @@ namespace OrchardCoreContrib.Email.Azure
             if (String.IsNullOrEmpty(DefaultSender))
             {
                 yield return new ValidationResult(S["The {0} field is required.", "Host name"], new[] { nameof(DefaultSender) });
-            }
-
-            if (String.IsNullOrEmpty(Recipient))
-            {
-                yield return new ValidationResult(S["The {0} field is required.", "Host name"], new[] { nameof(Recipient) });
             }
 
             if (String.IsNullOrEmpty(ConnectionString))
