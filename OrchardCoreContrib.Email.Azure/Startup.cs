@@ -43,7 +43,7 @@ namespace OrchardCoreContrib.Email.Azure
             services.AddScoped<INavigationProvider, AdminMenu>();
 
             services.AddTransient<IConfigureOptions<AzureSettings>, AzureSettingsConfiguration>();
-            services.AddScoped<IAzureService, AzureService>();
+            services.AddScoped<ISmtpService, AzureService>();
         }
 
         /// <inheritdoc/>

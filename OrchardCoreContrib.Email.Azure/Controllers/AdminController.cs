@@ -8,6 +8,7 @@ using OrchardCoreContrib.Email.Azure.Drivers;
 using OrchardCoreContrib.Email.Azure.ViewModels;
 using OrchardCoreContrib.Email.Azure.Services;
 using System.Net.Mail;
+using OrchardCore.Email;
 
 namespace OrchardCoreContrib.Email.Azure.Controllers
 {
@@ -15,14 +16,14 @@ namespace OrchardCoreContrib.Email.Azure.Controllers
     {
         private readonly IAuthorizationService _authorizationService;
         private readonly INotifier _notifier;
-        private readonly IAzureService _azureEmailService;
+        private readonly ISmtpService _azureEmailService;
         protected readonly IHtmlLocalizer H;
 
         public AdminController(
             IHtmlLocalizer<AdminController> h,
             IAuthorizationService authorizationService,
             INotifier notifier,
-            IAzureService azureEmailService)
+            ISmtpService azureEmailService)
         {
             H = h;
             _authorizationService = authorizationService;
@@ -73,10 +74,10 @@ namespace OrchardCoreContrib.Email.Azure.Controllers
             return View(model);
         }
 
-        private static MailMessage CreateMessageFromViewModel(AzureSettingsViewModel testSettings)
+        private static OrchardCore.Email.MailMessage CreateMessageFromViewModel(AzureSettingsViewModel testSettings)
         {
 
-            MailMessage message = new MailMessage("DoNotReply@060b6400-b2e8-4ee3-ba34-05da74c5505d.azurecomm.net", testSettings.To, testSettings.Subject, testSettings.Body);
+            OrchardCore.Email.MailMessage message = new OrchardCore.Email.MailMessage() { From = "DoNotReply@060b6400-b2e8-4ee3-ba34-05da74c5505d.azurecomm.net", To = testSettings.To, Subject = testSettings.Subject, Body = testSettings.Body };
 
             return message;
         }

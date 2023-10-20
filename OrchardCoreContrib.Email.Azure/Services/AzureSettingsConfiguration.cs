@@ -32,7 +32,6 @@ namespace OrchardCoreContrib.Email.Azure.Services
                 .As<AzureSettings>();
 
             options.DefaultSender = settings.DefaultSender;
-            options.Recipient = settings.Recipient;
             options.ConnectionString = settings.ConnectionString;
 
         }
