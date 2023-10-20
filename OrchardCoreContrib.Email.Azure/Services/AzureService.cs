@@ -5,10 +5,12 @@ using Microsoft.Extensions.Options;
 using Azure.Communication.Email;
 using System.Net.Mail;
 using WaitUntil = Azure.WaitUntil;
+using OrchardCoreContrib.Email.Services;
+using OrchardCore.Email;
 
 namespace OrchardCoreContrib.Email.Azure.Services
 {
-    public class AzureService : IAzureService
+    public class AzureService : ISmtpService
     {
         private const string EmailExtension = ".eml";
 
@@ -40,17 +42,17 @@ namespace OrchardCoreContrib.Email.Azure.Services
         /// <param name="message">The message to be sent.</param>
         /// <returns>A <see cref="AzureResult"/> that holds information about the sent message, for instance if it has sent successfully or if it has failed.</returns>
         /// <remarks>This method allows to send an email without setting <see cref="MailMessage.To"/> if <see cref="MailMessage.Cc"/> or <see cref="MailMessage.Bcc"/> is provided.</remarks>
-        public async Task<AzureResult> SendAsync(MailMessage message)
+        public async Task<SmtpResult> SendAsync(OrchardCore.Email.MailMessage message)
         {
 
-            AzureResult result;
+            SmtpResult result;
             var response = default(string);
             try
             {
                 // Set the MailMessage.From, to avoid the confusion between _options.DefaultSender (Author) and submitter (Sender)
-                var senderAddress = String.IsNullOrWhiteSpace(message.Sender?.Address)
+                var senderAddress = String.IsNullOrWhiteSpace(message.From)
                     ? _options.DefaultSender
-                    : message.Sender.Address;
+                    : message.Sender;
 
                 string connectionString = "endpoint=https://comres-fis.unitedstates.communication.azure.com/;accesskey=/h+w8QmZ2PJOwmj4QlBJ0Izma/rMyap/EhLCd1g3Rs9qcxyIMV+bfuRJeDIBXAQHcaiqlImav8OS9j5VmlUsYg==";
 
@@ -59,23 +61,25 @@ namespace OrchardCoreContrib.Email.Azure.Services
                 EmailSendOperation emailSendOperation = await emailClient.SendAsync(
                     WaitUntil.Completed,
                     "DoNotReply@060b6400-b2e8-4ee3-ba34-05da74c5505d.azurecomm.net",
-                    "tony.cobb@fisglobal.com",
-                    "Azure test email",
-                    "<html><h1>Hello world via email</h1></html>"
+                    message.To,
+                    message.Subject,
+                    message.Body
                 );
 
 
 
-                result = AzureResult.Success;
+                result = SmtpResult.Success;
             }
             catch (Exception ex)
             {
-                result = AzureResult.Failed(S["An error occurred while sending an email: '{0}'", ex.Message]);
+                result = SmtpResult.Failed(S["An error occurred while sending an email: '{0}'", ex.Message]);
             }
 
             result.Response = response;
 
             return result;
         }
+
+
     }
 }
