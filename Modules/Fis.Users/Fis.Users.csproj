@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\FisAccountController.cs" />
+    <Compile Remove="Controllers\FisAdminController.cs" />
+    <Compile Remove="ViewModels\UsersIndexViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\FisAdmin\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OrchardCore.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.AuditTrail.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Data.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Email.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Infrastructure.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Localization.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Liquid.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Sms.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Sms.Core" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Users" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Users.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Navigation.Core" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Recipes.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Roles.Core" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Settings.Core" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Setup.Abstractions" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Users.Core" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Workflows.Abstractions" Version="1.7.2" />
+        
+  </ItemGroup>
+</Project>

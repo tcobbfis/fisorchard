@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DisplayManagerExtensions.cs" />
+    <Compile Remove="Misc.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Admin\Index-old.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OrchardCore.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Admin">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Admin.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Admin.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Admin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Data.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Data.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Data.YesSql.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Data.YesSql.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Deployment.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Deployment.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.DisplayManagement">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.DisplayManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.DisplayManagement.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.DisplayManagement.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Infrastructure.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Infrastructure.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Liquid.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Liquid.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Localization.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Localization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Module.Targets">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Module.Targets.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Mvc.Core">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Navigation.Core">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Navigation.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Queries.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Queries.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Recipes.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Recipes.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.ResourceManagement">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.ResourceManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.ResourceManagement.Abstractions">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.ResourceManagement.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.ResourceManagement.Core">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.ResourceManagement.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OrchardCore.Settings.Core">
+      <HintPath>..\..\..\Orchard\src\OrchardCore.Modules\OrchardCore.Admin\bin\Debug\net8.0\OrchardCore.Settings.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

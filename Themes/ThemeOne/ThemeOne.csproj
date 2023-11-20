@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="node_modules\**" />
+    <TypeScriptCompile Remove="node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Content-Blog.cshtml" />
+    <EmbeddedResource Remove="Views\Content-BlogPost.liquid" />
+    <EmbeddedResource Remove="Views\Content-BlogPost.Summary.liquid" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.2.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="OrchardCore.Media" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Menu" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.Theme.Targets" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.7.2" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="1.7.2" />
+  </ItemGroup>
+
+</Project>
