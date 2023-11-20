@@ -13,7 +13,7 @@ namespace FisAdmin
 
             _manifest
                 .DefineStyle("admin-fis")
-                .SetUrl("~/FisAdmin/css/FisAdmin.min.css", "~/FisAdmin/css/FisAdmin.css")
+                .SetUrl("~/FisAdmin/css/FisAdmin.css", "~/FisAdmin/css/FisAdmin.css")
                 .SetVersion("1.0.0");
         }
 
